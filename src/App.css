@@ -1,0 +1,122 @@
+.App {
+  text-align: center;
+  font-family:Georgia, 'Times New Roman', Times, serif
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.container{
+  width: 30vw;
+  padding : 7px;
+  background-color: #282c34;
+  display: flex;
+  flex-wrap : wrap;
+  margin: 15px 80px;
+  height: 390px;
+  flex-direction: column;
+  align-items: flex-start;
+  border: 2px solid gray;
+}
+
+.container-box{
+  display: flex;
+  flex-wrap : wrap;
+  flex-direction: row;
+  margin :15px;
+  background-color: #61dafb;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+}
+
+.disc{
+  color: white;
+  text-align: left;
+  padding: 5px;
+ 
+}
+
+.name{
+  color: white;
+  justify-content: center;
+  align-items: center;
+  padding: 4px;
+  font-size:x-large;  
+  /* border nahi lagra */
+}
+
+.stars{
+  color: white;
+  padding: 4px;
+
+}
+
+.lang{
+  color: white;
+  padding: 4px;
+}
+
+.forks{
+  color: white;
+  padding: 4px;
+}
+.owner{
+  color: white;
+}
+
+.same{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4px;
+}
+
+.gap{
+  margin: 0px 150px;
+}
+
+.next{
+  width: 50%;
+  margin-right: 15px;
+}
+.prev{
+  width: 50%;
+}
+
+.buttons{
+  display: flex;
+  padding: 5px;
+}
