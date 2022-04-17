@@ -7,9 +7,11 @@ export default class Repositories extends Component {
     super()
     this.state = {
         repo : [],
-        page : 1
+        page : 1,
+        search : ''
     }
 }
+  
 
   async componentDidMount(){
       let url = "https://api.github.com/search/repositories?q=language:Javascript&sort=stars&order=desc&page=1&per_page=4";
@@ -19,7 +21,8 @@ export default class Repositories extends Component {
       
       this.setState({
         repo : parsedData.items,
-        page : 1
+        page : 1,
+        search : null
     })
     console.log(this.state.repo)
       }
@@ -47,7 +50,29 @@ export default class Repositories extends Component {
             repo : parsedData.items,
         })   
   }
+
+  searchHandler = async ()=>{
+
+    this.setState({
+      page : this.state.page,
+      search : this.props.searchValue
+  })
+
+    let url = `https://api.github.com/search/repositories?q=language:${this.state.search}&sort=stars&order=desc&page=${this.state.page}&per_page=4`;
+    let data = await fetch(url)
+    let parsedData = await data.json()
+    
+    this.setState({
+      repo : parsedData.items
+    })
+
+  }
+ 
   render() {
+    if(this.props.searchValue !== ''){
+        this.searchHandler()
+        
+    }
     return (
 
       <div className="card text-center m-5">
@@ -80,6 +105,7 @@ export default class Repositories extends Component {
       </div>
       <div className="buttons d-flex justify-content-center">
       <button disabled={this.state.page<=1} onClick={this.prevPage} className="btn btn-primary next">Previous</button>
+      <button disabled className="btn btn-primary prev next">{this.state.page}</button>
       <button onClick={this.nextPage} className="btn btn-primary prev">Next</button>
       </div>
       </div>

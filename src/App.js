@@ -9,7 +9,7 @@ function App() {
   const handleForm = (event) => {
     event.preventDefault(); 
     console.log(event.target[0].value);  
-    chstate(event.target[0])    
+    chstate(event.target[0].value)  
   }
   
   return (
